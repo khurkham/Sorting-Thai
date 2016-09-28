@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Created by masterUNG on 9/28/2016 AD.
  */
 
-public class SortAdapter extends BaseAdapter{
+public class SortAdapter extends BaseAdapter {
 
     //Explicit
     private Context context;
