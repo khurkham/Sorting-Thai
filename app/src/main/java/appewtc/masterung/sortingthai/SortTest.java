@@ -16,20 +16,39 @@ public class SortTest extends Activity {
 
     DrawingView dv ;
     private Paint mPaint;
+    private int[] ints = new int[]{R.drawable.index0,
+            R.drawable.index1,R.drawable.index2,R.drawable.index3,
+            R.drawable.index4,R.drawable.index5,R.drawable.index6,
+            R.drawable.index7,R.drawable.index8,R.drawable.index9,
+            R.drawable.index10,R.drawable.index11,R.drawable.index12,
+            R.drawable.index13,R.drawable.index14,R.drawable.index15,
+            R.drawable.index16,R.drawable.index17,R.drawable.index18,
+            R.drawable.index19,R.drawable.index20,R.drawable.index21,
+            R.drawable.index22,R.drawable.index23,R.drawable.index24,
+            R.drawable.index25,R.drawable.index26,R.drawable.index27,
+            R.drawable.index28,R.drawable.index29,R.drawable.index30,
+            R.drawable.index31,R.drawable.index32,R.drawable.index33,
+            R.drawable.index34,R.drawable.index35,R.drawable.index36,
+            R.drawable.index37,R.drawable.index38,R.drawable.index39,
+            R.drawable.index40,R.drawable.index41,R.drawable.index42,
+            R.drawable.index43,};
+    private int anInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         dv = new DrawingView(this);
         setContentView(dv);
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
-        mPaint.setColor(Color.BLUE);
+        mPaint.setColor(Color.MAGENTA);    // Color of Pen
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeWidth(6);
+        mPaint.setStrokeWidth(24);   // Size of Pen
+        anInt = getIntent().getIntExtra("Index", 0);
 
 
 
@@ -74,7 +93,7 @@ public class SortTest extends Activity {
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
 
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.index0);
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), ints[anInt]);
             canvas.drawBitmap(bitmap, 0, 0, mBitmapPaint);
 
             canvas.drawBitmap( mBitmap, 0, 0, mBitmapPaint);
