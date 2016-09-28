@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="soft">
+
+        <item>ก</item>
+        <item>ข</item>
+        <item>ฃ</item>
+        <item>ค</item>
+        <item>ง</item>
+        <item>จ</item>
+
+    </string-array>
+
+</resources>
