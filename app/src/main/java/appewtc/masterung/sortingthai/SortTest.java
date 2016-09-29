@@ -89,10 +89,11 @@ public class SortTest extends Activity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-                //Speck
+                //Sound Effect
                 MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(),
                         spackInts[anInt]);
                 mediaPlayer.start();
+                //Clear Media
                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
