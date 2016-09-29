@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -53,6 +54,14 @@ public class SortTest extends Activity {
 
 
     }   // Main Method
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+
+        Log.d("SortV1", "You Click Back");
+
+    }   // onBackPressed
 
     public class DrawingView extends View {
 
