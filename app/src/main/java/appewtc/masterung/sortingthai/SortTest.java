@@ -1,13 +1,17 @@
 package appewtc.masterung.sortingthai;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -34,6 +38,10 @@ public class SortTest extends Activity {
             R.drawable.index40,R.drawable.index41,R.drawable.index42,
             R.drawable.index43,};
     private int anInt;
+    private int[] spackInts = new int[]{R.raw.index0, R.raw.index1,
+            R.raw.index2, R.raw.index3, R.raw.index4, R.raw.index5,
+            R.raw.index6, R.raw.index7, R.raw.index8, R.raw.index9,
+            R.raw.index10};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +68,49 @@ public class SortTest extends Activity {
         //super.onBackPressed();
 
         Log.d("SortV1", "You Click Back");
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.doremon48);
+        builder.setTitle("What do you want ?");
+        builder.setMessage("Please Click Button");
+        builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                //Restart Activity
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+
+                dialogInterface.dismiss();
+            }
+        });
+        builder.setNeutralButton("Speak", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                //Speck
+                MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(),
+                        spackInts[anInt]);
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.release();
+                    }
+                });
+
+                dialogInterface.dismiss();
+            }
+        });
+        builder.setPositiveButton("Back", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+
+        builder.show();
 
     }   // onBackPressed
 
