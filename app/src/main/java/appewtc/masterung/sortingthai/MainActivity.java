@@ -20,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
     }   // clickPlay
 
+    public void clickVideo(View view) {
+        startActivity(new Intent(MainActivity.this, VideoView.class));
+    }
+
     public void clickExit(View view) {
         finish();
     }
