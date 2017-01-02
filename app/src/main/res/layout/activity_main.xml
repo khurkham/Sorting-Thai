@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="clickVideo"
-            app:srcCompat="@drawable/video2"
+            app:srcCompat="@drawable/video5"
             android:layout_marginTop="20dp" />
 
         <ImageView
